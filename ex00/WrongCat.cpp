@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoll <mdoll@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/25 11:57:08 by mdoll             #+#    #+#             */
-/*   Updated: 2023/07/25 12:11:25 by mdoll            ###   ########.fr       */
+/*   Created: 2023/07/25 12:50:16 by mdoll             #+#    #+#             */
+/*   Updated: 2023/07/25 13:07:49 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
-Dog::Dog() {
-	_type = "Dog";
-	std::cout << "A new Dog was born!" << std::endl;
+WrongCat::WrongCat() {
+	_type = "WrongCat";
+	std::cout << "A new WrongCat was born!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) {
+WrongCat::WrongCat(const WrongCat &other) {
 	*this = other;
-	std::cout << "A new Dog was born from another Dog!" << std::endl;
+	std::cout << "A new WrongCat was born from another WrongCat!" << std::endl;
 }
 
-Dog::~Dog() {
-	std::cout << "A Dog died!" << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << "A WrongCat died!" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other) {
+WrongCat &WrongCat::operator=(const WrongCat &other) {
 	this->_type = other._type;
 	return *this;
 }
 
-void Dog::makeSound() const {
-	std::cout << "WOOF!" << std::endl;
+void WrongCat::makeSound() const {
+	std::cout << "Bzz Bzz!" << std::endl;
 }
+
