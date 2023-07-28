@@ -18,7 +18,7 @@ WrongCat::WrongCat() {
 	std::cout << "A new WrongCat was born!" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) {
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal() {
 	*this = other;
 	std::cout << "A new WrongCat was born from another WrongCat!" << std::endl;
 }

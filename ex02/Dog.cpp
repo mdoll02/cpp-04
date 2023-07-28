@@ -19,7 +19,7 @@ Dog::Dog() {
 	std::cout << "A new Dog was born!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) {
+Dog::Dog(const Dog &other) :AAnimal() {
 	*this = other;
 	std::cout << "A new Dog was born from another Dog!" << std::endl;
 }

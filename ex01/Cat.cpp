@@ -19,7 +19,7 @@ Cat::Cat() {
 	std::cout << "A new Cat was born!" << std::endl;
 }
 
-Cat::Cat(const Cat &other) {
+Cat::Cat(const Cat &other) : Animal(){
 	*this = other;
 	std::cout << "A new Cat was born from another Cat!" << std::endl;
 }
