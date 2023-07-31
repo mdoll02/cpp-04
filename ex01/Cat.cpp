@@ -14,9 +14,9 @@
 #include "Cat.hpp"
 
 Cat::Cat() {
+	std::cout << "Default Cat constructor called" << std::endl;
 	_type = "Cat";
 	_brain = new Brain();
-	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal(other){
@@ -25,8 +25,8 @@ Cat::Cat(const Cat &other) : Animal(other){
 }
 
 Cat::~Cat() {
-	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &other) {

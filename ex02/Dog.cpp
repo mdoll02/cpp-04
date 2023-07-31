@@ -14,9 +14,9 @@
 #include <iostream>
 
 Dog::Dog() {
+	std::cout << "Default Dog constructor called" << std::endl;
 	_type = "Dog";
 	_brain = new Brain();
-	std::cout << "Default Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &other) : AAnimal(other) {
@@ -25,8 +25,8 @@ Dog::Dog(const Dog &other) : AAnimal(other) {
 }
 
 Dog::~Dog() {
-	std::cout << "Dog destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other) {
