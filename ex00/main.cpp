@@ -23,10 +23,11 @@ int main() {
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
 
-		std::cout << j->getType() << std::endl;
-		std::cout << i->getType() << std::endl;
-		i->makeSound();
+		std::cout << j->getType() << " ";
 		j->makeSound();
+		std::cout << i->getType() << " ";
+		i->makeSound();
+
 		meta->makeSound();
 
 
@@ -35,21 +36,25 @@ int main() {
 		delete i;
 	}
 	{
-		const WrongAnimal* meta = new WrongAnimal();
-		const WrongAnimal* i = new WrongCat();
-
 		WrongCat cat;
 
-		std::cout << "herenow\n";
+		std::cout << "WrongCat\n";
 		cat.makeSound();
 
 
-		WrongAnimal* animalus = nullptr;
+		WrongAnimal* animalus = NULL;
 
 		animalus = new WrongCat();
-		std::cout << "Here\n";
+		std::cout << "WrongAnimal\n";
 		animalus->makeSound();
-		std::cout << i->getType() << " " << std::endl;
+
+		delete animalus;
+	}
+	{
+		const WrongAnimal* meta = new WrongAnimal();
+		const WrongAnimal* i = new WrongCat();
+
+		std::cout << i->getType() << std::endl;
 		i->makeSound();
 		meta->makeSound();
 
