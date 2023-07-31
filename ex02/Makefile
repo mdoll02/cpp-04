@@ -1,4 +1,4 @@
-NAME := brain
+NAME := aanimal
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 SRC := AAnimal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp\
