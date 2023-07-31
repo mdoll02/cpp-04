@@ -24,7 +24,7 @@ public:
 
     Dog& operator=(const Dog& other);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 
 private:
 

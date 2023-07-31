@@ -14,7 +14,7 @@
 #include <iostream>
 
 Brain::Brain() {
-	std::cout << "A new Brain was created!" << std::endl;
+	std::cout << "Default Brain constructor called" << std::endl;
 	_ideas[0] = "Build a nest";
 	_ideas[1] = "Hunt for food";
 	_ideas[2] = "Migrate to a warmer climate";
@@ -118,19 +118,22 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain &other) {
+	std::cout << "Brain copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new Brain was created from another Brain!" << std::endl;
 }
 
 Brain::~Brain() {
-	std::cout << "A Brain stopped existing!" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
 
 Brain &Brain::operator=(const Brain &other) {
-	int i = 0;
-	while (i < 100) {
-		this->_ideas[i] = other._ideas[i];
-		i++;
+	std::cout << "Brain copy assignment constructor called" << std::endl;
+	if (this != &other) {
+		int i = 0;
+		while (i < 100) {
+			this->_ideas[i] = other._ideas[i];
+			i++;
+		}
 	}
 	return *this;
 }

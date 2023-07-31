@@ -15,25 +15,27 @@
 
 
 AAnimal::AAnimal() : _type("AAnimal") {
-	std::cout << "A new AAnimal was born!" << std::endl;
+	std::cout << "Default AAnimal constructor called" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal &other) {
+	std::cout << "AAnimal copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new AAnimal was born from another AAnimal!" << std::endl;
 }
 
 AAnimal::~AAnimal() {
-	std::cout << "An AAAnimal died!" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal &other) {
-	this->_type = other._type;
+	std::cout << "AAnimal copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 
 std::string AAnimal::getType() const { return _type; }
 
 void AAnimal::makeSound() const {
-	std::cout << "Undefined AAAnimal noises" << std::endl;
+	std::cout << "Undefined AAnimal noises" << std::endl;
 }

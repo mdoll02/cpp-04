@@ -13,22 +13,24 @@
 #include <iostream>
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat() : Animal(){
 	_type = "Cat";
-	std::cout << "A new Cat was born!" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal() {
+Cat::Cat(const Cat &other) : Animal(other) {
 	*this = other;
-	std::cout << "A new Cat was born from another Cat!" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat::~Cat() {
-	std::cout << "A Cat died!" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &other) {
-	this->_type = other._type;
+	std::cout << "Cat copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 

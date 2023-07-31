@@ -16,26 +16,29 @@
 Cat::Cat() {
 	_type = "Cat";
 	_brain = new Brain();
-	std::cout << "A new Cat was born!" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) :AAnimal() {
+Cat::Cat(const Cat &other) : AAnimal(other) {
+	std::cout << "Cat copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new Cat was born from another Cat!" << std::endl;
 }
 
 Cat::~Cat() {
-	std::cout << "A Cat died!" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
 }
 
 Cat &Cat::operator=(const Cat &other) {
-	this->_type = other._type;
-	this->_brain = new Brain();
-	int i = 0;
-	while (i < 100) {
-		this->_brain->setIdea(i, other._brain->getIdea(i));
-		i++;
+	std::cout << "Cat copy assignment operator called" << std::endl;
+	if (this != &other) {
+		this->_type = other._type;
+		this->_brain = new Brain();
+		int i = 0;
+		while (i < 100) {
+			this->_brain->setIdea(i, other._brain->getIdea(i));
+			i++;
+		}
 	}
 	return *this;
 }

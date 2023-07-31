@@ -24,7 +24,7 @@ public:
 
     Cat& operator=(const Cat& other);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 
 private:
 

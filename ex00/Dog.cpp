@@ -13,22 +13,24 @@
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog() {
+Dog::Dog() : Animal() {
 	_type = "Dog";
-	std::cout << "A new Dog was born!" << std::endl;
+	std::cout << "Default Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal()  {
+Dog::Dog(const Dog &other) : Animal(other)  {
+	std::cout << "Dog copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new Dog was born from another Dog!" << std::endl;
 }
 
 Dog::~Dog() {
-	std::cout << "A Dog died!" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other) {
-	this->_type = other._type;
+	std::cout << "Dog copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 

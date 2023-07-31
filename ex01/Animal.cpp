@@ -13,22 +13,23 @@
 #include "Animal.hpp"
 #include <iostream>
 
-
 Animal::Animal() : _type("Animal") {
-	std::cout << "A new Animal was born!" << std::endl;
+	std::cout << "Default Animal constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &other) {
+	std::cout << "Animal copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new Animal was born from another Animal!" << std::endl;
 }
 
 Animal::~Animal() {
-	std::cout << "An Animal died!" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &other) {
-	this->_type = other._type;
+	std::cout << "Animal copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 

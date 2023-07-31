@@ -15,20 +15,22 @@
 
 WrongCat::WrongCat() {
 	_type = "WrongCat";
-	std::cout << "A new WrongCat was born!" << std::endl;
+	std::cout << "Default WrongCat constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) : WrongAnimal() {
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
+	std::cout << "WrongCat copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new WrongCat was born from another WrongCat!" << std::endl;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "A WrongCat died!" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &other) {
-	this->_type = other._type;
+	std::cout << "WrongCat copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 

@@ -18,16 +18,18 @@ WrongAnimal::WrongAnimal() : _type("WrongAnimal") {
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other) {
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
 	*this = other;
-	std::cout << "A new WrongAnimal was born from another WrongAnimal!" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << "A WrongAnimal has died!" << std::endl;
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
-	this->_type = other._type;
+	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return *this;
 }
 
